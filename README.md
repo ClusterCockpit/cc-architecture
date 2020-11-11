@@ -53,7 +53,13 @@ play to install, setup, and use. But you also need to provide modular
 components with documented standardized interfaces that also can be
 integrated standalone in complex HPC environments of larger computing
 centers.
-* 
+*  Initially the plan was to provide a full-fledged UI with options to configure
+ the monitoring framework via the web interface. As it turned out
+ a conventional graphical user interface is not the best option for all
+ use-cases. Especially lists are entered much more efficiently in a text format.
+ For our targeted user audience we can safely assume that people know how to use a text editor.
+ As a consequence the UI should focus on the core purpose of the framework to allow to search, filter, and show job performance monitoring data.
+
 
 # Basic requirements
 
@@ -62,7 +68,8 @@ This leads to the following high-level requirements:
 * Every components is a self-contained binary.
 * Components are connected via stable, standardized interfaces that allow to integrate each component standalone.
 * The overall framework should be plug and play to deploy, setup, and use.
-* No external servers are required to use the overall framework.  
+* No external servers are required to use the overall framework.
+* The UI provided in the web interface should be simple and focus on the core purpose of the framework.
 
 # Basic components
 
