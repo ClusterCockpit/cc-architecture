@@ -7,7 +7,61 @@ Up to now ClusterCockpit was a pilot implemententation of a web frontend for job
 
 The usage of ClusterCockpit by us and the feedback we got from external users lead to a number of insights and experiences we want to take into account for our first production implementation:
 
-* The Symfony web framework is a great piece of software and provides solutions for everything you may need in a web application. It has a large community and the documentation is much better than what I saw in other packages (it is still not great, but that is probably not the fault of Symfony). The code quality and software design is awesome as far as I can judge.  
+* The Symfony web framework is a great piece of software and provides solutions
+ for everything you may need in a web application. It has a large community and
+ the documentation is much better than what I saw in other packages (it is
+ still not great, but that is probably not the fault of Symfony). The code
+ quality and software design is awesome as far as I can judge. While similar
+ opinionated MVC web frameworks are available in most other scripting languages
+ (Ruby, Python, Perl, and others) I gave PHP a shot, as it seemed a common
+ choice in this application area. But what, in the case of opinionated web
+ frameworks, can be seen as an advantage may turn out as a disadvantage. You
+ may end up with a solution that is way more complicated then necessary. One
+ example is the required MySQL server you need to setup beforehand. Another
+ common issue with PHP, and what I know this is similar with all other
+ scripting languages, is that the package manager and update process is
+ complex, fragile and requires constant maintenance by the developer. Even
+ worse this complexity is exposed to the user of your software, and it is
+ very likely that many issue tickets are related to problems with the
+ package manager, software environment, and broken dependencies between
+ external packages. Is there an alternative? Especially for web based
+ applications Golang offers (builtin) support for web applications. It is
+ a compiled language with self contained binaries, which means that the
+ complexity of software dependencies through package managers and the
+ shared library nightmare as in C/C++ does not apply. Updating boils down
+ to throw in a new binary for your OS and CPU architecture. Also you do
+ not need a separate web server, getting rid of another show stopper for
+ an average user. There is a reason that a lot of new applications are
+ implemented in Golang nowadays.
+* Any required external server creates complexity and prevents people from
+ using your software. This applies to the web server mentioned above, but
+ also to database and caching servers (MySQL, InfluxDB, and Redis). Every
+ server is a universe on its own and requires effort to setup and maintain
+ it. Especially for smaller Open Source projects it is not feasible to
+ integrate those external server dependencies and provide an all included
+ support.
+* A distributed HPC cluster is an inherently complex environment for
+system software. On one hand you want to provide an easy installation and
+setup process, so that users can try your software. On the other hand you
+need to integrate in a complex and volatile environment, where every
+computing center has its specific issues and requirements. Also you must
+proof to admins that your software does not influence or endanger the
+operation of the cluster. This is especially true for components that run
+on the compute nodes, as ,e.g., the metric collector. Ideally you provide
+an integrated solution for vanilla Linux HPC Clusters that is plug and
+play to install, setup, and use. But you also need to provide modular
+components with documented standardized interfaces that also can be
+integrated standalone in complex HPC environments of larger computing
+centers.
+
+This leads to the following high-level requirements:
+* The overall monitoring framework shall decomposed of components.
+* The components are self-contained binaries.
+* Components are connected via stable, standardized interfaces that allow to integrate each component standalone.
+* The overall framework should be plug and play to deploy, setup, and use.
+* No external servers are required to use the overall framework.
+
+  
 
 # Basic components
 
