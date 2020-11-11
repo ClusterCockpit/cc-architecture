@@ -30,7 +30,7 @@ The usage of ClusterCockpit by us and the feedback we got from external users le
  complexity of software dependencies through package managers and the
  shared library nightmare as in C/C++ does not apply. Updating boils down
  to throw in a new binary for your OS and CPU architecture. Also you do
- not need a separate web server, getting rid of another show stopper for
+ not need a separate web server in production use, getting rid of another show stopper for
  an average user. There is a reason that a lot of new applications are
  implemented in Golang nowadays.
 * Any required external server creates complexity and prevents people from
@@ -53,15 +53,16 @@ play to install, setup, and use. But you also need to provide modular
 components with documented standardized interfaces that also can be
 integrated standalone in complex HPC environments of larger computing
 centers.
+* 
+
+# Basic requirements
 
 This leads to the following high-level requirements:
-* The overall monitoring framework shall decomposed of components.
-* The components are self-contained binaries.
+* The overall monitoring framework shall be decomposed in components.
+* Every components is a self-contained binary.
 * Components are connected via stable, standardized interfaces that allow to integrate each component standalone.
 * The overall framework should be plug and play to deploy, setup, and use.
-* No external servers are required to use the overall framework.
-
-  
+* No external servers are required to use the overall framework.  
 
 # Basic components
 
