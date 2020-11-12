@@ -3,7 +3,7 @@
 ClusterCockpit is a monitoring platform that is tailormade for job-specific performance monitoring in HPC cluster environments.
 This repository has the purpose to provide a platform for discussions about the architecture and interfaces of the ClusterCockpit HPC monitoring framework.
 
-[In the Wiki](https://github.com/ClusterCockpit/cc-architecture/wiki/previous_experience) you find the experiences with the current implementation that inspired below requirements and structure.
+[In the Wiki](https://github.com/ClusterCockpit/cc-architecture/wiki/Learning-from-experience) you find the experiences with the current implementation that inspired below requirements and structure.
 
 # High-level requirements
 
