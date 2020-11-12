@@ -10,7 +10,7 @@ This repository has the purpose to provide a platform for discussions about the 
 This leads to the following high-level requirements:
 * The overall monitoring framework shall be made up of components.
 * Every component consists a self-contained binary
-* It is preferred to implement tailor-made solutions vs. using external libraries or frameworks if it feasible and promises a significant performance advantage or overall complexity reduction.
+* It is preferred to implement tailor-made solutions vs. using external libraries or frameworks if it is feasible and promises a significant performance advantage or overall complexity reduction.
 * Components are connected via stable, standardized interfaces that allow to integrate each component standalone.
 * The overall framework should be plug and play to deploy, setup, and use.
 * No external servers are required to use the overall framework.
