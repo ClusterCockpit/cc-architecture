@@ -5,9 +5,9 @@ This repository has the purpose to provide a platform for discussions about the 
 
 [In the Wiki](https://github.com/ClusterCockpit/cc-architecture/wiki/Learning-from-experience) you find the experiences with the current implementation that inspired below requirements and structure.
 
-# High-level requirements
+# Non-functional requirements
 
-This leads to the following high-level requirements:
+This leads to the following non-functional requirements:
 * The overall monitoring framework shall be made up of components.
 * Every component consists a self-contained binary
 * It is preferred to implement tailor-made solutions vs. using external libraries or frameworks if it is feasible and promises a significant performance advantage or overall complexity reduction.
