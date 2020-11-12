@@ -19,4 +19,4 @@ This leads to the following high-level requirements:
 # Basic components
 
 
-![ClusterCockpit components](https://user-images.githubusercontent.com/11572749/98777167-8d057380-23f0-11eb-9568-1f4e83002dab.png)
+![ClusterCockpit components](https://user-images.githubusercontent.com/11572749/98929802-00d07a80-24dc-11eb-8fda-f6d6f22bac70.png)
