@@ -14,9 +14,18 @@ This leads to the following non-functional requirements:
 * Components are connected via stable, standardized interfaces that allow to integrate each component standalone.
 * The overall framework should be plug and play to deploy, setup, and use.
 * No external servers are required to use the overall framework.
+* As far as possible no component should require root rights.
 * The UI provided in the web interface should be simple and focus on the core purpose of the framework.
 
 # Basic components
 
+The following components are provided:
+* **metric collector**: Collects hetrics on the compute nodes, performs preprocessing and acumulation, and injects the data into the **metric transport** component. Can be triggered by a cron job or run as a daemon.
+* **metric transport**: A infrastructure that allows to collect and distribute metric data within a cluster.
+* **metric store**: A persistent storage for timeseries metric data that is optimised for fast writing of raw node metric data. Can convert the timeseries data into a format optimised for a job specific data presentation.
+* **job archive**: A json schema together with directory layout specification to archive job data to disk.
+* **control**: Offers central monitoring and configuration for the **metric transport** agents. Archives jobs once they are finished. Performs continous query operations on metric data.
+* **web backend**: A data provider for the web frontend.
+* **web frontend**: The web user interface. May be served by **web backend**.
 
 ![ClusterCockpit components](https://user-images.githubusercontent.com/11572749/98929802-00d07a80-24dc-11eb-8fda-f6d6f22bac70.png)
